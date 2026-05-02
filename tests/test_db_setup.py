@@ -1,7 +1,7 @@
 import pytest
 from sqlalchemy import create_engine, inspect
-from phishing_detect.app.db.models import Base
-from phishing_detect.app.core.settings import settings
+from shared_kernel.session import Base
+from shared_kernel.settings import settings
 
 def test_database_connection():
     """ Verifica que podemos conectar a la base de datos configurada """
