@@ -14,7 +14,7 @@ COPY services/lib-shared-kernel /lib-shared-kernel
 
 # Copiar archivos del proyecto
 COPY services/db-postgres/pyproject.toml /app/
-COPY services/db-postgres/app /app/app
+COPY services/db-postgres/db_app /app/db_app
 
 ENV PYTHONPATH="/app:/lib-shared-kernel"
 
@@ -22,4 +22,4 @@ ENV PYTHONPATH="/app:/lib-shared-kernel"
 RUN uv sync --no-cache
 
 # Comando por defecto para inicializar y sembrar
-CMD ["uv", "run", "python", "-m", "app.seed"]
+CMD ["uv", "run", "python", "-m", "db_app.seed"]
